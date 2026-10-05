@@ -1,0 +1,44 @@
+/* ──────────────────────────────────────────────────────────────
+   Flux Energy
+   Layers, back to front:
+     .bg (environments) → .back (type behind cans) → .stage-slot (WebGL)
+     → .front (type and controls) → .flow (scrolling column) → chrome
+   The scroll story only ever changes opacity, transform and visibility.
+   ────────────────────────────────────────────────────────────── */
+
+@property --c1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #45e8ff;
+}
+@property --c2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #0b4bff;
+}
+@property --deep {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #020a33;
+}
+
+:root {
+  --c1: #45e8ff;
+  --c2: #0b4bff;
+  --deep: #020a33;
+  --ink: #07080a;
+  --ui: #ffffff;
+  --ui-soft: rgba(255, 255, 255, 0.64);
+  --ui-line: rgba(255, 255, 255, 0.24);
+  --pad: clamp(18px, 3.4vw, 56px);
+  --inset: calc(var(--pad) * 1.6);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --display: var(--font-display), 'Arial Narrow', Impact, sans-serif;
+  --text: var(--font-body), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  transition: --c1 0.9s ease, --c2 0.9s ease, --deep 0.9s ease;
+}
+
+html[data-ui='light'] {
+  --ui: #07080a;
+  --ui-soft: rgba(7, 8, 10, 0.66);
+  --ui-line: rgb���q�^
